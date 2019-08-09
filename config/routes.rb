@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Level prelim resource:
+
+  # CREATE
+  get("/level_prelims/new", { :controller => "level_prelims", :action => "new_form" })
+  post("/create_level_prelim", { :controller => "level_prelims", :action => "create_row" })
+
+  # READ
+  get("/level_prelims", { :controller => "level_prelims", :action => "index" })
+  get("/level_prelims/:id_to_display", { :controller => "level_prelims", :action => "show" })
+
+  # UPDATE
+  get("/level_prelims/:prefill_with_id/edit", { :controller => "level_prelims", :action => "edit_form" })
+  post("/update_level_prelim/:id_to_modify", { :controller => "level_prelims", :action => "update_row" })
+
+  # DELETE
+  get("/delete_level_prelim/:id_to_remove", { :controller => "level_prelims", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Coach resource:
 
   # CREATE

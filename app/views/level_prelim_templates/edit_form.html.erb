@@ -1,0 +1,32 @@
+<h1>
+  Edit level prelim #<%= @level_prelim.id %>
+</h1>
+
+<hr>
+
+<!-- Form level_prelim start -->
+<form action="/update_level_prelim/<%= @level_prelim.id %>" method="post">
+<!-- Form level_prelim end -->
+
+  <!-- Label and input for bout_id start -->
+  <div class="form-group">
+    <label for="bout_id">
+      Bout
+    </label>
+
+    <!-- Input for bout_id start -->
+    <input type="text" id="bout_id" name="bout_id" class="form-control" value="<%= @level_prelim.bout_id %>">
+    <!-- Input for bout_id end -->
+  </div>
+  <!-- Label and input for bout_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update level prelim
+  </button>
+</form>
+
+<hr>
+
+<a href="/level_prelims">
+  Go back
+</a>

@@ -1,0 +1,64 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Level prelim #<%= @level_prelim.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/level_prelims" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link level_prelim start -->
+      <div class="col">
+        <a href="/level_prelims/<%= @level_prelim.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit level prelim
+        </a>
+      </div>
+      <!-- Edit link level_prelim end -->
+
+      <!-- Delete link level_prelim start -->
+      <div class="col">
+        <a href="/delete_level_prelim/<%= @level_prelim.id %>" class="btn btn-block btn-outline-secondary">
+          Delete level prelim
+        </a>
+      </div>
+      <!-- Delete link level_prelim end -->
+    </div>
+
+    <dl>
+      <dt>
+        Bout
+      </dt>
+      <!-- Display bout_id start -->
+      <dd>
+        <%= @level_prelim.bout_id %>
+      </dd>
+      <!-- Display bout_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@level_prelim.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@level_prelim.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
