@@ -31,6 +31,20 @@ class PoetsController < ApplicationController
     end
   end
 
+  def create_row_from_team
+    @poet = Poet.new
+
+    @poet.team_id = params.fetch("team_id")
+
+    if @poet.valid?
+      @poet.save
+
+      redirect_to("/teams/#{@poet.team_id}", notice: "Poet created successfully.")
+    else
+      render("poet_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @poet = Poet.find(params.fetch("prefill_with_id"))
 

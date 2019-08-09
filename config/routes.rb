@@ -63,6 +63,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/poets/new", { :controller => "poets", :action => "new_form" })
   post("/create_poet", { :controller => "poets", :action => "create_row" })
+  post("/create_poet_from_team", { :controller => "poets", :action => "create_row_from_team" })
 
   # READ
   get("/poets", { :controller => "poets", :action => "index" })
@@ -159,6 +160,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/coaches/new", { :controller => "coaches", :action => "new_form" })
   post("/create_coach", { :controller => "coaches", :action => "create_row" })
+  post("/create_coach_from_team", { :controller => "coaches", :action => "create_row_from_team" })
 
   # READ
   get("/coaches", { :controller => "coaches", :action => "index" })

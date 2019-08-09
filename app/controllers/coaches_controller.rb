@@ -33,6 +33,22 @@ class CoachesController < ApplicationController
     end
   end
 
+  def create_row_from_team
+    @coach = Coach.new
+
+    @coach.first_name = params.fetch("first_name")
+    @coach.last_name = params.fetch("last_name")
+    @coach.team_id = params.fetch("team_id")
+
+    if @coach.valid?
+      @coach.save
+
+      redirect_to("/teams/#{@coach.team_id}", notice: "Coach created successfully.")
+    else
+      render("coach_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @coach = Coach.find(params.fetch("prefill_with_id"))
 
