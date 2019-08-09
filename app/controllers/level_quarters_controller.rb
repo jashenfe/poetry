@@ -1,6 +1,7 @@
 class LevelQuartersController < ApplicationController
   def index
-    @level_quarters = LevelQuarter.page(params[:page]).per(10)
+    @q = LevelQuarter.ransack(params[:q])
+    @level_quarters = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("level_quarter_templates/index.html.erb")
   end

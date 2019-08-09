@@ -1,6 +1,7 @@
 class LevelSemisController < ApplicationController
   def index
-    @level_semis = LevelSemi.page(params[:page]).per(10)
+    @q = LevelSemi.ransack(params[:q])
+    @level_semis = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("level_semi_templates/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class PoetsController < ApplicationController
   def index
-    @poets = Poet.page(params[:page]).per(10)
+    @q = Poet.ransack(params[:q])
+    @poets = @q.result(:distinct => true).includes(:team).page(params[:page]).per(10)
 
     render("poet_templates/index.html.erb")
   end

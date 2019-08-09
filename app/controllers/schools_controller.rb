@@ -1,6 +1,7 @@
 class SchoolsController < ApplicationController
   def index
-    @schools = School.page(params[:page]).per(10)
+    @q = School.ransack(params[:q])
+    @schools = @q.result(:distinct => true).includes(:team).page(params[:page]).per(10)
 
     render("school_templates/index.html.erb")
   end

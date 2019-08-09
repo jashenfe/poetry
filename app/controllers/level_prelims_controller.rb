@@ -1,6 +1,7 @@
 class LevelPrelimsController < ApplicationController
   def index
-    @level_prelims = LevelPrelim.page(params[:page]).per(10)
+    @q = LevelPrelim.ransack(params[:q])
+    @level_prelims = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("level_prelim_templates/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class LevelFinalsController < ApplicationController
   def index
-    @level_finals = LevelFinal.page(params[:page]).per(10)
+    @q = LevelFinal.ransack(params[:q])
+    @level_finals = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("level_final_templates/index.html.erb")
   end
