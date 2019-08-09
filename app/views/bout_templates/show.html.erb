@@ -1,0 +1,109 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Bout #<%= @bout.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/bouts" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link bout start -->
+      <div class="col">
+        <a href="/bouts/<%= @bout.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit bout
+        </a>
+      </div>
+      <!-- Edit link bout end -->
+
+      <!-- Delete link bout start -->
+      <div class="col">
+        <a href="/delete_bout/<%= @bout.id %>" class="btn btn-block btn-outline-secondary">
+          Delete bout
+        </a>
+      </div>
+      <!-- Delete link bout end -->
+    </div>
+
+    <dl>
+      <dt>
+        Score 1
+      </dt>
+      <!-- Display score_1 start -->
+      <dd>
+        <%= @bout.score_1 %>
+      </dd>
+      <!-- Display score_1 end -->
+
+      <dt>
+        Score 2
+      </dt>
+      <!-- Display score_2 start -->
+      <dd>
+        <%= @bout.score_2 %>
+      </dd>
+      <!-- Display score_2 end -->
+
+      <dt>
+        Score 3
+      </dt>
+      <!-- Display score_3 start -->
+      <dd>
+        <%= @bout.score_3 %>
+      </dd>
+      <!-- Display score_3 end -->
+
+      <dt>
+        Score 4
+      </dt>
+      <!-- Display score_4 start -->
+      <dd>
+        <%= @bout.score_4 %>
+      </dd>
+      <!-- Display score_4 end -->
+
+      <dt>
+        Score 5
+      </dt>
+      <!-- Display score_5 start -->
+      <dd>
+        <%= @bout.score_5 %>
+      </dd>
+      <!-- Display score_5 end -->
+
+      <dt>
+        Team
+      </dt>
+      <!-- Display team_id start -->
+      <dd>
+        <%= @bout.team_id %>
+      </dd>
+      <!-- Display team_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@bout.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@bout.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
