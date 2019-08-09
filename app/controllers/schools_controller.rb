@@ -1,6 +1,6 @@
 class SchoolsController < ApplicationController
   def index
-    @schools = School.all
+    @schools = School.page(params[:page]).per(10)
 
     render("school_templates/index.html.erb")
   end

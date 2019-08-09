@@ -1,6 +1,6 @@
 class LevelSemisController < ApplicationController
   def index
-    @level_semis = LevelSemi.all
+    @level_semis = LevelSemi.page(params[:page]).per(10)
 
     render("level_semi_templates/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class PoetsController < ApplicationController
   def index
-    @poets = Poet.all
+    @poets = Poet.page(params[:page]).per(10)
 
     render("poet_templates/index.html.erb")
   end

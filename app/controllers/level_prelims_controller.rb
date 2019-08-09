@@ -1,6 +1,6 @@
 class LevelPrelimsController < ApplicationController
   def index
-    @level_prelims = LevelPrelim.all
+    @level_prelims = LevelPrelim.page(params[:page]).per(10)
 
     render("level_prelim_templates/index.html.erb")
   end
