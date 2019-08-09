@@ -1,0 +1,32 @@
+<h1>
+  Edit poet #<%= @poet.id %>
+</h1>
+
+<hr>
+
+<!-- Form poet start -->
+<form action="/update_poet/<%= @poet.id %>" method="post">
+<!-- Form poet end -->
+
+  <!-- Label and input for team_id start -->
+  <div class="form-group">
+    <label for="team_id">
+      Team
+    </label>
+
+    <!-- Input for team_id start -->
+    <input type="text" id="team_id" name="team_id" class="form-control" value="<%= @poet.team_id %>">
+    <!-- Input for team_id end -->
+  </div>
+  <!-- Label and input for team_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update poet
+  </button>
+</form>
+
+<hr>
+
+<a href="/poets">
+  Go back
+</a>

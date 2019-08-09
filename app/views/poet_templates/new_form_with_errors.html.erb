@@ -1,0 +1,44 @@
+<!-- Validation failure messages -->
+<% if @poet.present? %>
+  <% if @poet.errors.any? %>
+    <% @poet.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new poet
+</h1>
+
+
+<hr>
+
+<!-- Form poet start -->
+<form action="/create_poet" method="post">
+<!-- Form poet end -->
+
+  <!-- Label and input for team_id start -->
+  <div class="form-group">
+    <label for="team_id">
+      Team
+    </label>
+
+    <!-- Input for team_id start -->
+    <input type="text" id="team_id" name="team_id" class="form-control" value="<%= @poet.team_id %>">
+    <!-- Input for team_id end -->
+  </div>
+  <!-- Label and input for team_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create poet
+  </button>
+</form>
+
+<hr>
+
+<a href="/poets">
+  Go back
+</a>

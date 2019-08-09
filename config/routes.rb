@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Poet resource:
+
+  # CREATE
+  get("/poets/new", { :controller => "poets", :action => "new_form" })
+  post("/create_poet", { :controller => "poets", :action => "create_row" })
+
+  # READ
+  get("/poets", { :controller => "poets", :action => "index" })
+  get("/poets/:id_to_display", { :controller => "poets", :action => "show" })
+
+  # UPDATE
+  get("/poets/:prefill_with_id/edit", { :controller => "poets", :action => "edit_form" })
+  post("/update_poet/:id_to_modify", { :controller => "poets", :action => "update_row" })
+
+  # DELETE
+  get("/delete_poet/:id_to_remove", { :controller => "poets", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Level final resource:
 
   # CREATE
