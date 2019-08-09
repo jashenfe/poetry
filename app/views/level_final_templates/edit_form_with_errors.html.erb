@@ -1,0 +1,29 @@
+<!-- Validation failure messages -->
+<% if @level_final.errors.any? %>
+  <% @level_final.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit level final #<%= @level_final.id %>
+</h1>
+
+<hr>
+
+<!-- Form level_final start -->
+<form action="/update_level_final/<%= @level_final.id %>" method="post">
+<!-- Form level_final end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update level final
+  </button>
+</form>
+
+<hr>
+
+<a href="/level_finals">
+  Go back
+</a>

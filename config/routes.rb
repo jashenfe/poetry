@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Level final resource:
+
+  # CREATE
+  get("/level_finals/new", { :controller => "level_finals", :action => "new_form" })
+  post("/create_level_final", { :controller => "level_finals", :action => "create_row" })
+
+  # READ
+  get("/level_finals", { :controller => "level_finals", :action => "index" })
+  get("/level_finals/:id_to_display", { :controller => "level_finals", :action => "show" })
+
+  # UPDATE
+  get("/level_finals/:prefill_with_id/edit", { :controller => "level_finals", :action => "edit_form" })
+  post("/update_level_final/:id_to_modify", { :controller => "level_finals", :action => "update_row" })
+
+  # DELETE
+  get("/delete_level_final/:id_to_remove", { :controller => "level_finals", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Level semi resource:
 
   # CREATE
