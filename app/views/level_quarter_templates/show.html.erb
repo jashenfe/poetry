@@ -1,0 +1,55 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Level quarter #<%= @level_quarter.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/level_quarters" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link level_quarter start -->
+      <div class="col">
+        <a href="/level_quarters/<%= @level_quarter.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit level quarter
+        </a>
+      </div>
+      <!-- Edit link level_quarter end -->
+
+      <!-- Delete link level_quarter start -->
+      <div class="col">
+        <a href="/delete_level_quarter/<%= @level_quarter.id %>" class="btn btn-block btn-outline-secondary">
+          Delete level quarter
+        </a>
+      </div>
+      <!-- Delete link level_quarter end -->
+    </div>
+
+    <dl>
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@level_quarter.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@level_quarter.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

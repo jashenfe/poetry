@@ -1,0 +1,20 @@
+<h1>
+  Edit level quarter #<%= @level_quarter.id %>
+</h1>
+
+<hr>
+
+<!-- Form level_quarter start -->
+<form action="/update_level_quarter/<%= @level_quarter.id %>" method="post">
+<!-- Form level_quarter end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update level quarter
+  </button>
+</form>
+
+<hr>
+
+<a href="/level_quarters">
+  Go back
+</a>

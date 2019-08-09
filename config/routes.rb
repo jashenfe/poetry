@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Level quarter resource:
+
+  # CREATE
+  get("/level_quarters/new", { :controller => "level_quarters", :action => "new_form" })
+  post("/create_level_quarter", { :controller => "level_quarters", :action => "create_row" })
+
+  # READ
+  get("/level_quarters", { :controller => "level_quarters", :action => "index" })
+  get("/level_quarters/:id_to_display", { :controller => "level_quarters", :action => "show" })
+
+  # UPDATE
+  get("/level_quarters/:prefill_with_id/edit", { :controller => "level_quarters", :action => "edit_form" })
+  post("/update_level_quarter/:id_to_modify", { :controller => "level_quarters", :action => "update_row" })
+
+  # DELETE
+  get("/delete_level_quarter/:id_to_remove", { :controller => "level_quarters", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Level prelim resource:
 
   # CREATE
