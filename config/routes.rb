@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the School resource:
+
+  # CREATE
+  get("/schools/new", { :controller => "schools", :action => "new_form" })
+  post("/create_school", { :controller => "schools", :action => "create_row" })
+
+  # READ
+  get("/schools", { :controller => "schools", :action => "index" })
+  get("/schools/:id_to_display", { :controller => "schools", :action => "show" })
+
+  # UPDATE
+  get("/schools/:prefill_with_id/edit", { :controller => "schools", :action => "edit_form" })
+  post("/update_school/:id_to_modify", { :controller => "schools", :action => "update_row" })
+
+  # DELETE
+  get("/delete_school/:id_to_remove", { :controller => "schools", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Poet resource:
 
   # CREATE

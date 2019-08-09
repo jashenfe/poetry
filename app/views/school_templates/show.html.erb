@@ -1,0 +1,64 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      School #<%= @school.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/schools" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link school start -->
+      <div class="col">
+        <a href="/schools/<%= @school.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit school
+        </a>
+      </div>
+      <!-- Edit link school end -->
+
+      <!-- Delete link school start -->
+      <div class="col">
+        <a href="/delete_school/<%= @school.id %>" class="btn btn-block btn-outline-secondary">
+          Delete school
+        </a>
+      </div>
+      <!-- Delete link school end -->
+    </div>
+
+    <dl>
+      <dt>
+        Team
+      </dt>
+      <!-- Display team_id start -->
+      <dd>
+        <%= @school.team_id %>
+      </dd>
+      <!-- Display team_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@school.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@school.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
