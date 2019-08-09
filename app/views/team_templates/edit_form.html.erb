@@ -4,21 +4,15 @@
 
 <hr>
 
-<!-- Form team start -->
 <form action="/update_team/<%= @team.id %>" method="post">
-<!-- Form team end -->
 
-  <!-- Label and input for bout_id start -->
   <div class="form-group">
     <label for="bout_id">
       Bout
     </label>
 
-    <!-- Input for bout_id start -->
     <input type="text" id="bout_id" name="bout_id" class="form-control" value="<%= @team.bout_id %>">
-    <!-- Input for bout_id end -->
   </div>
-  <!-- Label and input for bout_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update team

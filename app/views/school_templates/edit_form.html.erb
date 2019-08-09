@@ -4,21 +4,15 @@
 
 <hr>
 
-<!-- Form school start -->
 <form action="/update_school/<%= @school.id %>" method="post">
-<!-- Form school end -->
 
-  <!-- Label and input for team_id start -->
   <div class="form-group">
     <label for="team_id">
       Team
     </label>
 
-    <!-- Input for team_id start -->
     <%= select_tag(:team_id, options_from_collection_for_select(Team.all, :id, :bout_id, @school.team_id), :class => "form-control") %>
-    <!-- Input for team_id end -->
   </div>
-  <!-- Label and input for team_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update school

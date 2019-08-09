@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "poet_templates/poets_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -50,13 +46,10 @@
 
       <% @poets.each do |poet| %>
       <tr>
-        <!-- Display poet.id start -->
         <td>
           <%= poet.id %>
         </td>
-        <!-- Display poet.id end -->
 
-        <!-- Display poet.team_id start -->
         <td>
           <% if poet.team.present? %>
             <a href="/teams/<%= poet.team.id %>">
@@ -64,19 +57,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display poet.team_id end -->
 
-        <!-- Display poet.created_at start -->
         <td>
           <%= time_ago_in_words(poet.created_at) %> ago
         </td>
-        <!-- Display poet.created_at end -->
 
-        <!-- Display poet.updated_at start -->
         <td>
           <%= time_ago_in_words(poet.updated_at) %> ago
         </td>
-        <!-- Display poet.updated_at end -->
 
         <td>
           <a href="/poets/<%= poet.id %>">

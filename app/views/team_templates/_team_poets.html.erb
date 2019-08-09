@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @team.poets.each do |poet| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/poets/<%= poet.id %>">
           <%= poet.team_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_poet_from_team/<%= poet.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="team_poets_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "team_templates/team_poets_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 
