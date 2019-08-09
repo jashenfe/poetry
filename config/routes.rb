@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Level semi resource:
+
+  # CREATE
+  get("/level_semis/new", { :controller => "level_semis", :action => "new_form" })
+  post("/create_level_semi", { :controller => "level_semis", :action => "create_row" })
+
+  # READ
+  get("/level_semis", { :controller => "level_semis", :action => "index" })
+  get("/level_semis/:id_to_display", { :controller => "level_semis", :action => "show" })
+
+  # UPDATE
+  get("/level_semis/:prefill_with_id/edit", { :controller => "level_semis", :action => "edit_form" })
+  post("/update_level_semi/:id_to_modify", { :controller => "level_semis", :action => "update_row" })
+
+  # DELETE
+  get("/delete_level_semi/:id_to_remove", { :controller => "level_semis", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Level quarter resource:
 
   # CREATE

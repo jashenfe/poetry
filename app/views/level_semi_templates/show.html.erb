@@ -1,0 +1,55 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Level semi #<%= @level_semi.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/level_semis" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link level_semi start -->
+      <div class="col">
+        <a href="/level_semis/<%= @level_semi.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit level semi
+        </a>
+      </div>
+      <!-- Edit link level_semi end -->
+
+      <!-- Delete link level_semi start -->
+      <div class="col">
+        <a href="/delete_level_semi/<%= @level_semi.id %>" class="btn btn-block btn-outline-secondary">
+          Delete level semi
+        </a>
+      </div>
+      <!-- Delete link level_semi end -->
+    </div>
+
+    <dl>
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@level_semi.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@level_semi.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
