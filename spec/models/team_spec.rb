@@ -4,6 +4,8 @@ RSpec.describe Team, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:poets) }
+
     end
 
     describe "InDirect Associations" do
