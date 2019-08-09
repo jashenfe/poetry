@@ -51,6 +51,14 @@ class PoetsController < ApplicationController
     end
   end
 
+  def destroy_row_from_team
+    @poet = Poet.find(params.fetch("id_to_remove"))
+
+    @poet.destroy
+
+    redirect_to("/teams/#{@poet.team_id}", notice: "Poet deleted successfully.")
+  end
+
   def destroy_row
     @poet = Poet.find(params.fetch("id_to_remove"))
 
