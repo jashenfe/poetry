@@ -1,4 +1,6 @@
 ActiveAdmin.register Bout do
+
+ permit_params :score_1, :score_2, :score_3, :score_4, :score_5, :team_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
