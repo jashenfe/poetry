@@ -52,7 +52,11 @@
       </dt>
       <!-- Display team_id start -->
       <dd>
-        <%= @coach.team_id %>
+        <% if @coach.team.present? %>
+          <a href="/teams/<%= @coach.team_id %>">
+            <%= @coach.team.bout_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display team_id end -->
 

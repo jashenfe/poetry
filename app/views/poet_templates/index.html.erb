@@ -54,7 +54,11 @@
 
         <!-- Display poet.team_id start -->
         <td>
-          <%= poet.team.bout_id %>
+          <% if poet.team.present? %>
+            <a href="/teams/<%= poet.team.id %>">
+              <%= poet.team.bout_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display poet.team_id end -->
 

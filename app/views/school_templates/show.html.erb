@@ -34,7 +34,11 @@
       </dt>
       <!-- Display team_id start -->
       <dd>
-        <%= @school.team_id %>
+        <% if @school.team.present? %>
+          <a href="/teams/<%= @school.team_id %>">
+            <%= @school.team.bout_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display team_id end -->
 

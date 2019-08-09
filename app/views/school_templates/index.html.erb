@@ -54,7 +54,11 @@
 
         <!-- Display school.team_id start -->
         <td>
-          <%= school.team.bout_id %>
+          <% if school.team.present? %>
+            <a href="/teams/<%= school.team.id %>">
+              <%= school.team.bout_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display school.team_id end -->
 

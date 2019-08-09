@@ -34,7 +34,11 @@
       </dt>
       <!-- Display team_id start -->
       <dd>
-        <%= @poet.team_id %>
+        <% if @poet.team.present? %>
+          <a href="/teams/<%= @poet.team_id %>">
+            <%= @poet.team.bout_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display team_id end -->
 
